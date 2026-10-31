@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; manifest-src 'self'; worker-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0b5cab">
+<title>Milk Ledger</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<section id="lock" class="lock" hidden>
+  <div class="brand"><span class="logo">🥛</span><b id="lockTitle">Milk Ledger</b></div>
+  <p id="lockMsg" class="lockMsg"></p>
+  <div id="dots" class="dots" aria-live="polite"></div>
+  <div id="pad" class="pad"></div>
+  <p id="lockErr" class="err" aria-live="assertive"></p>
+  <div class="lockLinks">
+    <button type="button" id="lockRestore" class="link"></button>
+    <button type="button" id="lockLang" class="link"></button>
+  </div>
+</section>
+
+<main id="app" hidden>
+  <header class="top">
+    <b id="appTitle">Milk Ledger</b>
+    <button type="button" class="lockBtn" data-act="lock" aria-label="Lock">🔒</button>
+  </header>
+  <div id="view" class="view"></div>
+  <nav id="nav" class="nav"></nav>
+</main>
+
+<div id="modal" class="modal" hidden></div>
+<div id="toast" class="toast" role="status"></div>
+<input type="file" id="fileIn" accept=".json,application/json" hidden>
+<noscript>This app needs JavaScript enabled.</noscript>
+<script src="app.js"></script>
+</body>
+</html>
